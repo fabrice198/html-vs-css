@@ -21,3 +21,27 @@ body{
     justify-content: center;
     align-items: center;
 }
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppins" ,sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+.login-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: red;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
