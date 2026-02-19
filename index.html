@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Restaurant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-container">
+    <div class="logo">
+      <img src="logo.png" alt="Smart Restaurant Logo">
+      <h1>SMART RESTAURANT</h1>
+    </div>
+    <nav class="navigation">
+      <span class="nav-title">Explore:</span>
+      <a href="menu.html">Menu</a>
+      <a href="register.html">Register</a>
+    </nav>
+  </div>
+</header>
+
+<!-- WELCOME SECTION WITH BACKGROUND SLIDER -->
+<section class="welcome">
+  <!-- Slides as background -->
+  <div class="slide fade" style="background-image: url('slide1.png');"></div>
+  <div class="slide fade" style="background-image: url('slide2.png');"></div>
+  <div class="slide fade" style="background-image: url('slide3.png');"></div>
+  <div class="slide fade" style="background-image: url('slide4.png');"></div>
+  <div class="slide fade" style="background-image: url('slide5.png');"></div>
+  <div class="slide fade" style="background-image: url('slide6.png');"></div>
+  <div class="slide fade" style="background-image: url('slide7.png');"></div>
+  <div class="slide fade" style="background-image: url('slide8.png');"></div>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Text Content -->
+  <div class="welcome-text-container">
+    <h2>Welcome to Smart Restaurant</h2>
+    <p class="welcome-text">
+      Experience the perfect blend of taste, comfort, and elegance.
+      At Smart Restaurant, every meal is prepared with passion and served with excellence.
+    </p>
+    <a href="menu.html" class="btn-explore">Explore Menu</a>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots-container">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+
+
+<!-- DESCRIPTION SECTION -->
+<section class="description-section">
+  <div class="container">
+    <p class="description">
+      Smart Restaurant is a modern dining destination located in Kigali, Rwanda.
+      We specialize in freshly prepared meals made from high-quality ingredients.
+      Our mission is to provide unforgettable flavors, a relaxing atmosphere,
+      and outstanding customer service. Whether you're here for a family dinner,
+      a romantic evening, or a quick lunch, we promise a smart choice every time.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Smart Restaurant | Published by "zeno_250" | Contact: 0798831888 / 0723529956</p>
+  </div>
+</footer>
+
+<script >let slideIndex = 0;
+const slides = document.querySelectorAll('.welcome .slide');
+const dots = document.querySelectorAll('.dot');
+
+function showSlides() {
+  slides.forEach(slide => slide.style.display = 'none');
+  dots.forEach(dot => dot.classList.remove('active'));
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active');
+  setTimeout(showSlides, 4000); // change slide every 4s
+}
+
+// Dot click
+dots.forEach((dot, idx) => {
+  dot.addEventListener('click', () => {
+    slideIndex = idx;
+    slides.forEach(slide => slide.style.display = 'none');
+    dots.forEach(d => d.classList.remove('active'));
+    slides[idx].style.display = 'block';
+    dot.classList.add('active');
+  });
+});
+
+// Initialize
+showSlides();
+</script>
+</body>
+</html>
